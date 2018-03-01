@@ -3,10 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: 'source-map',
-  entry: [
-    'webpack-hot-middleware/client',
-    './client/reduxstagram'
-  ],
+  entry: './client/reduxstagram',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -25,10 +22,10 @@ module.exports = {
       include: path.join(__dirname, 'client')
     },
     // CSS
-    { 
-      test: /\.styl$/, 
+    {
+      test: /\.scss/,
       include: path.join(__dirname, 'client'),
-      loader: 'style-loader!css-loader!stylus-loader'
+      loader: 'style-loader!css-loader!sass-loader'
     }
     ]
   }
